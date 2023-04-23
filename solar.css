@@ -1,0 +1,110 @@
+/* Set up the solar system container */
+.solar-system {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  
+/* Define the sun */
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    margin: -40px 0 0 -40px;
+    border-radius: 50%;
+    background-color: #ffbf00;
+    box-shadow: 0 0 60px #ffbf00;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+	animation: spin 20s linear infinite;
+}
+
+/* Define the planets */
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  box-shadow: 0 0 30px #ccc;
+  transform-origin: 50% 150%;
+  animation: orbit 10s linear infinite;
+}
+
+.mercury {
+    width: 10px;
+    height: 10px;
+    margin-top: -60px;
+    background-color: #888;
+    animation-duration: 4s;
+}
+  
+.venus {
+    width: 15px;
+    height: 15px;
+    margin-top: -80px;
+    background-color: #ddc;
+    animation-duration: 7s;
+}
+
+.earth {
+    width: 18px;
+    height: 18px;
+    margin-top: -120px;
+    background-color: #36c;
+    animation-duration: 10s;
+}
+  
+.mars {
+    width: 14px;
+    height: 14px;
+    margin-top: -160px;
+    background-color: #d22;
+    animation-duration: 13s;
+}
+
+/* Define the moon */
+.moon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    margin: -3px 0 0 -3px;
+    border-radius: 50%;
+    background-color: #ddd;
+    box-shadow: 0 0 10px #ddd;
+    transform-origin: 50% 150%;
+    animation: orbit 2s linear infinite, spin 1s linear infinite;
+    animation-delay: 1s;
+}
+
+/* Define the orbit animation */
+@keyframes orbit {
+    from {
+      transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+  
+/* Define the spin animation */
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
